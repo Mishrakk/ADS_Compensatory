@@ -6,13 +6,15 @@ namespace SearchAlgorithms
     {
         static void Main(string[] args)
         {
-            int[] numbers = new int[] { 3, 8, 11, 17, 5, 8 };
+            int[] numbers = new int[100000000];
+            numbers[100000000 - 1] = 8;
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
             int SearchValue = 8;
             stopwatch.Start();
             int IndexSimpleLinearSearch = SimpleLinearSearch(numbers, SearchValue);
             stopwatch.Stop();
             long TimeSimpleLinearSearch = stopwatch.ElapsedMilliseconds;
+            stopwatch.Reset();
             stopwatch.Start();
             int IndexImprovedLinearSearch = ImprovedLinearSearch(numbers, SearchValue);
             stopwatch.Stop();
