@@ -55,5 +55,23 @@ namespace SearchAlgorithms
             }
             return -1;
         }
-    } 
+        public static int ImprovedLinearSearchWithSentinel(int[] array, int searchValue)
+        {
+            int last = array[array.Length - 1];
+            array[array.Length - 1] = searchValue;
+            int i = 0;
+            while (array[i]!= searchValue)
+            {
+                i++;
+            }
+            if (i < array.Length-1 || last == searchValue)
+            {
+                return i;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+    }
 }
