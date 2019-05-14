@@ -7,16 +7,18 @@ namespace SearchAlgorithms
         static void Main(string[] args)
         {
             int[] numbers = new int[] { 3, 8, 11, 17, 5, 8 };
-            int SearchValue = 7;
-            int SearchValueIndex = SimpleLinearSearch(numbers, SearchValue);
+            int SearchValue = 8;
+            int IndexSimpleLinearSearch = SimpleLinearSearch(numbers, SearchValue);
+            int IndexImprovedLinearSearch = ImprovedLinearSearch(numbers, SearchValue);
             Console.WriteLine("We are looking for number " + SearchValue);
-            if (SearchValueIndex == -1)
+            if (IndexSimpleLinearSearch == -1)
             {
                 Console.WriteLine("Value was not found");
             }
             else
             {
-                Console.WriteLine("Number found at index " + SearchValueIndex);
+                Console.WriteLine("Simple linear search give index " + IndexSimpleLinearSearch);
+                Console.WriteLine("Improved linear search give index " + IndexImprovedLinearSearch);
             }
         }
 
