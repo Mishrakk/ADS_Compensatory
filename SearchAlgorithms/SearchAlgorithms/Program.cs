@@ -6,10 +6,11 @@ namespace SearchAlgorithms
     {
         static void Main(string[] args)
         {
-            int[] numbers = new int[100000000];
-            numbers[100000000 - 1] = 8;
-            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+            int ArraySize = 100000000;
             int SearchValue = 8;
+            int[] numbers = new int[ArraySize];
+            numbers[ArraySize - 1] = SearchValue;
+            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
             stopwatch.Start();
             int IndexSimpleLinearSearch = SimpleLinearSearch(numbers, SearchValue);
             stopwatch.Stop();
