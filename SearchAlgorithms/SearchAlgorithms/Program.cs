@@ -29,5 +29,18 @@ namespace SearchAlgorithms
                 Console.WriteLine("Number found at index " + SearchValueIndex);
             }
         }
+        public static int SimpleLinearSearch(int[] array, int searchValue)
+        {
+            int SearchValueIndex = -1;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == searchValue)
+                {
+                    SearchValueIndex = i;
+                }
+            }
+            return SearchValueIndex;
+        }
     }
 }
