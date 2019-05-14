@@ -7,9 +7,16 @@ namespace SearchAlgorithms
         static void Main(string[] args)
         {
             int[] numbers = new int[] { 3, 8, 11, 17, 5, 8 };
+            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
             int SearchValue = 8;
+            stopwatch.Start();
             int IndexSimpleLinearSearch = SimpleLinearSearch(numbers, SearchValue);
+            stopwatch.Stop();
+            long TimeSimpleLinearSearch = stopwatch.ElapsedMilliseconds;
+            stopwatch.Start();
             int IndexImprovedLinearSearch = ImprovedLinearSearch(numbers, SearchValue);
+            stopwatch.Stop();
+            long TimeImprovedLinearSearch = stopwatch.ElapsedMilliseconds;
             Console.WriteLine("We are looking for number " + SearchValue);
             if (IndexSimpleLinearSearch == -1)
             {
@@ -17,8 +24,8 @@ namespace SearchAlgorithms
             }
             else
             {
-                Console.WriteLine("Simple linear search give index " + IndexSimpleLinearSearch);
-                Console.WriteLine("Improved linear search give index " + IndexImprovedLinearSearch);
+                Console.WriteLine("Simple linear search give index {0} in time {1}ms", IndexSimpleLinearSearch, TimeSimpleLinearSearch);
+                Console.WriteLine("Improved linear search give index {0} in time {1}ms", IndexImprovedLinearSearch, TimeImprovedLinearSearch);
             }
         }
 
