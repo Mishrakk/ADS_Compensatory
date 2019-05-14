@@ -20,6 +20,12 @@ namespace SearchAlgorithms
             int IndexImprovedLinearSearch = ImprovedLinearSearch(numbers, SearchValue);
             stopwatch.Stop();
             long TimeImprovedLinearSearch = stopwatch.ElapsedMilliseconds;
+
+            stopwatch.Reset();
+            stopwatch.Start();
+            int IndexImprovedLinearSearchWithSentinel = ImprovedLinearSearchWithSentinel(numbers, SearchValue);
+            stopwatch.Stop();
+            long TimeImprovedLinearSearchWithSentinel = stopwatch.ElapsedMilliseconds;
             Console.WriteLine("We are looking for number " + SearchValue);
             if (IndexSimpleLinearSearch == -1)
             {
@@ -29,6 +35,7 @@ namespace SearchAlgorithms
             {
                 Console.WriteLine("Simple linear search give index {0} in time {1}ms", IndexSimpleLinearSearch, TimeSimpleLinearSearch);
                 Console.WriteLine("Improved linear search give index {0} in time {1}ms", IndexImprovedLinearSearch, TimeImprovedLinearSearch);
+                Console.WriteLine("Improved linear search with sentinel give index {0} in time {1}ms", IndexImprovedLinearSearchWithSentinel, TimeImprovedLinearSearchWithSentinel);
             }
         }
 
