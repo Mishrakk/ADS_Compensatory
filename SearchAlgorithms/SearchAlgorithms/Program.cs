@@ -7,7 +7,12 @@ namespace SearchAlgorithms
         static void Main(string[] args)
         {
             int size = 10000000;
-            RunAnalysis(size);
+
+            Console.WriteLine("Size; SimpleLinearSearch; ImprovedLinearSearch; ImprovedWithSentinel");
+            for (int i = 1; i < 11; i++)
+            {
+                RunAnalysis(size * i);
+            }
         }
 
         public static int SimpleLinearSearch(int[] array, int searchValue)
@@ -73,17 +78,13 @@ namespace SearchAlgorithms
             int IndexImprovedLinearSearchWithSentinel = ImprovedLinearSearchWithSentinel(numbers, SearchValue);
             stopwatch.Stop();
             long TimeImprovedLinearSearchWithSentinel = stopwatch.ElapsedMilliseconds;
-            Console.WriteLine("We are looking for number " + SearchValue);
             if (IndexSimpleLinearSearch == -1)
             {
                 Console.WriteLine("Value was not found");
             }
             else
             {
-                Console.WriteLine("Simple linear search give index {0} in time {1}ms", IndexSimpleLinearSearch, TimeSimpleLinearSearch);
-                Console.WriteLine("Improved linear search give index {0} in time {1}ms", IndexImprovedLinearSearch, TimeImprovedLinearSearch);
-                Console.WriteLine("Improved linear search with sentinel give index {0} in time {1}ms", IndexImprovedLinearSearchWithSentinel, TimeImprovedLinearSearchWithSentinel);
-            }
+                Console.WriteLine(size + ";" + TimeSimpleLinearSearch + ";" + TimeImprovedLinearSearch + ";" + TimeImprovedLinearSearchWithSentinel);}
         
         }
     }
