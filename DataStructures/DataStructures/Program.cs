@@ -13,4 +13,8 @@ namespace DataStructures
         T Data;
         Node<T> Next;
     }
+    class LinkedList<T>
+    {
+        Node<T> First;
+    }
 }
