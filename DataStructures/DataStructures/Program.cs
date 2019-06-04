@@ -30,14 +30,19 @@ namespace DataStructures
 
         public void Add(T value)
         {
+            Node<T> NewNode = new Node<T>(value);
+
+            if (First == null)
+            {
+                NewNode.Next = null;
+                First = NewNode;
+            }
             Node<T> currentNode = First;
 
             while (currentNode.Next != null)
             {
                 currentNode = currentNode.Next;
             }
-
-            Node<T> NewNode = new Node<T>(value);
 
             currentNode.Next = NewNode;
             NewNode.Next = null;
