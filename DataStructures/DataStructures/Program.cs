@@ -6,11 +6,22 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
+            LinkedList<string> MyList = new LinkedList<string>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Enter {i} - th element of the list: ");
+                MyList.Add(Console.ReadLine());
+            }
+
+            MyList.PrintList();
+
+
         }
     }
     public class Node<T>
     {
-        T Data;
+        public T Data;
         public Node<T> Next;
 
         public Node(T Data)
@@ -21,7 +32,7 @@ namespace DataStructures
 
     public class LinkedList<T>
     {
-        Node<T> First;
+        public Node<T> First;
 
         public LinkedList()
         {
@@ -37,6 +48,7 @@ namespace DataStructures
                 NewNode.Next = null;
                 First = NewNode;
             }
+
             Node<T> currentNode = First;
 
             while (currentNode.Next != null)
@@ -46,6 +58,18 @@ namespace DataStructures
 
             currentNode.Next = NewNode;
             NewNode.Next = null;
+        }
+
+        public void PrintList()
+        {
+            var currentNode = First;
+
+            while (currentNode != null)
+            {
+                Console.WriteLine(currentNode.Data + ", ");
+
+                currentNode = currentNode.Next;
+            }
         }
     }
 }
