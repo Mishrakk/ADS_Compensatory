@@ -10,8 +10,9 @@ namespace DataStructures
 
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine($"Enter {i} - th element of the list: ");
-                MyList.Add(Console.ReadLine());
+                //Console.WriteLine($"Enter {i} - th element of the list: ");
+                //MyList.Add(Console.ReadLine());
+                MyList.Add(i.ToString());
             }
 
             MyList.PrintList();
@@ -43,10 +44,11 @@ namespace DataStructures
         {
             Node<T> NewNode = new Node<T>(value);
 
-            if (First == null)
+            if (First == null)//if true then list is empty
             {
                 NewNode.Next = null;
                 First = NewNode;
+                return;
             }
 
             Node<T> currentNode = First;
@@ -66,10 +68,11 @@ namespace DataStructures
 
             while (currentNode != null)
             {
-                Console.WriteLine(currentNode.Data + ", ");
+                Console.Write(currentNode.Data + ", ");
 
                 currentNode = currentNode.Next;
             }
+            Console.WriteLine();
         }
     }
 }
